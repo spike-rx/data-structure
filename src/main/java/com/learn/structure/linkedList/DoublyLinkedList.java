@@ -2,6 +2,7 @@ package com.learn.structure.linkedList;
 
 import java.util.Iterator;
 
+
 public class DoublyLinkedList<T> implements Iterable<T> {
 
     private int size = 0;
@@ -69,14 +70,14 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         return head.data;
     }
 
-    public T peakLast() {
+    public T peekLast() {
         if (isEmpty()) {
             throw new RuntimeException("Empty Linked list");
         }
         return tail.data;
     }
 
-    public T removeFrist() {
+    public T removeFirst() {
         if (isEmpty()) {
             throw new RuntimeException("Empty Linked list");
         }
@@ -92,15 +93,15 @@ public class DoublyLinkedList<T> implements Iterable<T> {
     }
 
     public T removeLast() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new RuntimeException("Empty list");
         }
         T data = tail.data;
         tail = tail.prev;
         --size;
-        if (isEmpty()){
+        if (isEmpty()) {
             head = null;
-        }else {
+        } else {
             tail.next = null;
         }
         return data;
@@ -108,7 +109,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
     public T remove(Node<T> element) {
         if (element.prev == null) {
-            return removeFrist();
+            return removeFirst();
         }
         if (element.next == null) {
             return removeLast();
@@ -123,24 +124,70 @@ public class DoublyLinkedList<T> implements Iterable<T> {
     }
 
     public T removeAt(int index) {
-        if(index< 0 || index > size ) {
+        if (index < 0 || index > size) {
             throw new IllegalArgumentException();
         }
         int i;
         Node<T> trav;
 
-        if(index < size / 2) {
-            for (i =0, trav = head; i != index; i++) {
+        if (index < size / 2) {
+            for (i = 0, trav = head; i != index; i++) {
                 trav = trav.next;
             }
 
-        }else {
+        } else {
             for (i = size - 1, trav = tail; i != index; i--) {
                 trav = trav.prev;
             }
 
         }
         return remove(trav);
+    }
+
+    // remove particular value
+    public boolean remove(Object obj) {
+        Node<T> trav = head;
+
+        if (obj == null) {
+            for (trav = head; trav != null; trav = trav.next) {
+                if(trav.data == null) {
+                    remove(trav);
+                    return true;
+                }
+            }
+        }else {
+            for (trav = head; trav != null; trav = trav.next ) {
+                if(obj.equals(trav.data)) {
+                    remove(trav);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public int indexOf(Object obj) {
+        Node<T> trav = head;
+        int index = 0;
+        if(obj == null) {
+            for(trav = head; trav !=null; trav = trav.next, index++){
+                if(trav.data == null) {
+                    return index;
+                }
+
+            }
+        } else {
+            for(trav = head; trav != null; trav = trav.next, index ++){
+                if(obj.equals(trav.data)) {
+                    return index;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public boolean contains(Object obj) {
+        return indexOf(obj) != -1;
     }
 
 
@@ -177,4 +224,16 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         };
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(";");
+        Node<T> trav = head;
+        while (trav != null) {
+            sb.append(trav.data + ",");
+            trav = trav.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }

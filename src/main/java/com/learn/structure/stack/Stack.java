@@ -4,6 +4,10 @@ import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/*
+* Use Linked List implement a Stack
+* */
+
 public class Stack <T> implements Iterable<T> {
 
     private LinkedList<T> list = new LinkedList<>();

@@ -1,10 +1,9 @@
 package com.learn.structure.dynamicArray;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class DynamicArrayTest {
 
@@ -14,13 +13,13 @@ public class DynamicArrayTest {
         assertTrue(list.isEmpty());
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void testRemovingEmpty() {
         DynamicArray<Integer> list = new DynamicArray<>();
         list.removeAt(0);
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void testIndexOutOfBounds() {
         DynamicArray<Integer> list = new DynamicArray<>();
         list.add(-56);
@@ -29,21 +28,21 @@ public class DynamicArrayTest {
         list.removeAt(3);
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void testIndexOutOfBounds2() {
         DynamicArray<Integer> list = new DynamicArray<>();
         for (int i = 0; i < 1000; i++) list.add(789);
         list.removeAt(1000);
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void testIndexOutOfBounds3() {
         DynamicArray<Integer> list = new DynamicArray<>();
         for (int i = 0; i < 1000; i++) list.add(789);
         list.removeAt(-1);
     }
 
-    @Test(expected = Exception.class)
+    @Test
     public void testIndexOutOfBounds4() {
         DynamicArray<Integer> list = new DynamicArray<>();
         for (int i = 0; i < 15; i++) list.add(123);

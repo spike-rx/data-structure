@@ -2,14 +2,12 @@ package com.learn.structure.quesions;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 
 public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
-        Map<Integer, Integer> valueMap = new HashMap<>();
+        HashMap<Integer, Integer> valueMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] <= target) {
                 if (valueMap.containsKey(target - nums[i])) {

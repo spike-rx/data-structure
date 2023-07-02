@@ -1,13 +1,13 @@
 package com.learn.structure.linkedList;
 
 import com.learn.structure.interview.LinkedList;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
     private LinkedList underTest;
 
-    @Before
+    @BeforeEach
     public void setUnderTest() {
         underTest = new LinkedList();
     }

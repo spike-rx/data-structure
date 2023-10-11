@@ -1,6 +1,6 @@
 package com.learn.structure.questions;
 
-import com.learn.structure.quesions.KeyPairs;
+import com.learn.questions.day01.KeyPairs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

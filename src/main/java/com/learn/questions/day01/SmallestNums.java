@@ -1,4 +1,4 @@
-package com.learn.structure.quesions;
+package com.learn.questions.day01;
 
 import java.util.ArrayList;
 import java.util.List;

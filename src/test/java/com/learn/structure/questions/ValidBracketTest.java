@@ -1,6 +1,6 @@
 package com.learn.structure.questions;
 
-import com.learn.structure.quesions.ValidBracket;
+import com.learn.questions.day01.ValidBracket;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

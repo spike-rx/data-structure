@@ -1,4 +1,4 @@
-package com.learn.structure.quesions;
+package com.learn.questions.day01;
 
 /**
  * @author : Spike

@@ -1,4 +1,4 @@
-package com.learn.structure.quesions;
+package com.learn.questions.day01;
 
 import java.util.Arrays;
 import java.util.HashMap;

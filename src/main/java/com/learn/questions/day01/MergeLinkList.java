@@ -1,11 +1,9 @@
-package com.learn.structure.quesions;
+package com.learn.questions.day01;
 
 /**
  * @author : Spike
  * @date : 2023/2/11
  */
-
-import java.util.List;
 
 /**
  * Definition for singly-linked list.

@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class LinkedList<T> implements Iterable<T> {
 
     private int size = 0;
-    private Node<T> head = null;
+    private Node head = null;
 
     private Node<T> tail = null;
 
@@ -32,6 +32,18 @@ public class LinkedList<T> implements Iterable<T> {
         }
         size++;
 
+    }
+
+    public Node reverse() {
+        Node prev = null;
+        Node next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        return prev;
     }
 
 
